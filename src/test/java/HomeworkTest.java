@@ -2,6 +2,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -21,12 +23,14 @@ public class HomeworkTest {
 
         System.out.println("Количество найденных ссылок: " + Url.size());
 
-        if (Url.size() > 43) {
+        if (Url.size() > 9) {
             WebElement UrlLink = Url.get(9);
             UrlLink.click();
-        }
 
-        Thread.sleep(2000);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement element = wait.until(ExpectedConditions.visibilityOf((WebElement) Url));
+
+        }
 
         driver.quit();
     }
