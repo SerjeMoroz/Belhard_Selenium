@@ -2,12 +2,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
-import java.util.List;
+
 
 public class HomeworkTest {
 
@@ -15,21 +12,25 @@ public class HomeworkTest {
     public void MyTest() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        String url = "https://the-internet.herokuapp.com/";
+        String url = ("https://litecart.stqa.ru/en/");
         driver.get(url);
 
 
-        List<WebElement> Url = driver.findElements(By.xpath("//div[@id='content']//a"));
+        WebElement element = driver.findElement(By.xpath("(//a[contains(text(),'Rubber Ducks')])[2]"));
+        element.click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-        System.out.println("Количество найденных ссылок: " + Url.size());
 
-        if (Url.size() > 9) {
-            WebElement UrlLink = Url.get(9);
-            UrlLink.click();
+        WebElement subCategory = driver.findElement(By.xpath("//ul[@class='list-vertical']//a[contains(text(),'Subcategory')]"));
+        subCategory.click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement element = wait.until(ExpectedConditions.visibilityOf((WebElement) Url));
+        WebElement duckTitle = driver.findElement(By.cssSelector("h1[class='title']"));
 
+        if (duckTitle.isDisplayed()) {
+            System.out.println("Есть контакт! ");
+        }else {
+            System.out.println(":( ");
         }
 
         driver.quit();
