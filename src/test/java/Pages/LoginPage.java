@@ -1,9 +1,10 @@
 package Pages;
 
+import Helpers.Methods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+public class LoginPage extends Methods {
 
     private By emailInputLocator = By.cssSelector("input[name='email']");
     private By passwordInputLocator = By.cssSelector("input[name='password']");

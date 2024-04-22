@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class Methods {
 
-    WebDriver driver = new ChromeDriver();
+    protected WebDriver driver;
 
     @BeforeMethod
     public void setup() {
@@ -17,7 +17,6 @@ public class Methods {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-
         driver.get("https://litecart.stqa.ru/en/");
     }
 
@@ -27,5 +26,4 @@ public class Methods {
             driver.quit();
         }
     }
-
 }

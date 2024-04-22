@@ -1,7 +1,7 @@
 package Pages;
 
 
-import Helpers.Methods;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -12,8 +12,8 @@ public class HomePage {
 
     protected WebDriver driver;
 
-    public HomePage() {
-        this.driver = driver;
+    public HomePage(WebDriver driver) {
+        this.driver = this.driver;
     }
 
 
