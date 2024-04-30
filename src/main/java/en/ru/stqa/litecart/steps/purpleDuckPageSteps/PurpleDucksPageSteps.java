@@ -18,20 +18,16 @@ public class PurpleDucksPageSteps extends PurpleDuckPage {
         userClickPurpleDuck();
     }
 
-    @И("ввёл нужное ему количество в поле ввода")
-    public void enterRandomQuantityDucks() {
-        enterInputQuantityField(getRandomQuantity());
-    }
-
-
     @И("кликнул Добавить в корзину")
     public void clickButtonAddCard() {
         clickToAddCardButton();
+
     }
 
 
-    @И("это количество отображается в корзине")
-    public void verifyQuantityDucksInCart() {
+    @И("кликает checkout")
+    public void buttonCheckoutClick() {
+        clickCheckoutButton();
     }
 
 }

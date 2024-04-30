@@ -26,9 +26,4 @@ public class BasePageSteps extends BasePage {
         clickCategoriesRubberDucks();
     }
 
-
-    @И("кликает checkout")
-    public void clickCheckout() {
-        clickOnTheBasketCheckout();
-    }
 }

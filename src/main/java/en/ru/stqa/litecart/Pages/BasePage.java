@@ -16,7 +16,6 @@ public class BasePage extends CustomMethods {
     private static final SelenideElement EDIT_ACCOUNT_BUTTON = $(By.xpath("//div[@class='content']//a[normalize-space()='Edit Account']"));
     private static final SelenideElement LOGOUT_BUTTON = $(By.xpath("//div[@class='content']//a[normalize-space()='Logout']"));
     private static final SelenideElement RUBBER_DUCKS_MENU_BUTTON = $(By.xpath("//td[@class='categories']//a[contains(text(),'Rubber Ducks')]"));
-    private static final SelenideElement CHECKOUT_BASKET_BUTTON = $(By.xpath("//a[normalize-space()='Checkout »']"));
     private static final SelenideElement PURPLE_DUCK = $(By.xpath("(//a[@title='Purple Duck'])[1]"));
     private static final SelenideElement YELLOW_DUCK = $(By.xpath("(//a[@title='Yellow Duck'])[1]"));
     private static final SelenideElement GREEN_DUCK = $(By.xpath("(//a[@title='Green Duck'])[1]"));
@@ -44,9 +43,6 @@ public class BasePage extends CustomMethods {
         customClick(LOGOUT_BUTTON);
     }
 
-    public void clickOnTheBasketCheckout() {
-        customClick(CHECKOUT_BASKET_BUTTON);
-    }
 
     public void clickCategoriesRubberDucks() {
         customClick(RUBBER_DUCKS_MENU_BUTTON);

@@ -26,7 +26,7 @@
         <allure.results.directory.path>target/allure-results</allure.results.directory.path>
 
         <env>dev</env>
-        <ip>192.168.1.226</ip>
+        <ip>192.168.100.5</ip>
         <browser>chrome</browser>
     </properties>
 
@@ -104,12 +104,19 @@
             <version>${lombok.version}</version>
         </dependency>
 
+        <!-- OperaDriver -->
+        <dependency>
+            <groupId>com.opera</groupId>
+            <artifactId>operadriver</artifactId>
+            <version>1.5</version>
+        </dependency>
+
+        <!-- SLF4J API and Logback Classic for logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.32</version>
         </dependency>
-
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
@@ -143,7 +150,7 @@
                         -Dbrowser=${browser}
                         -Dselenide.pageLoadStrategy=normal
                         -Dselenide.baseUrl=https://litecart.stqa.ru/en/
-                        -Dselenide.browser=org.ask42.helpers.CustomDriverProvider
+                        -Dselenide.browser=en.ru.stqa.litecart.Helpers.CustomDriverProvider
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <systemProperties>
@@ -190,7 +197,7 @@
                                 -Dbrowser=firefox
                                 -Dselenide.pageLoadStrategy=normal
                                 -Dselenide.baseUrl=https://litecart.stqa.ru/en/
-                                -Dselenide.browser=org.ask42.helpers.CustomDriverProvider
+                                -Dselenide.browser=en.ru.stqa.litecart.Helpers.CustomDriverProvider
                                 -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                             </argLine>
                         </configuration>
@@ -199,5 +206,6 @@
             </build>
         </profile>
     </profiles>
+
 
 </project>
