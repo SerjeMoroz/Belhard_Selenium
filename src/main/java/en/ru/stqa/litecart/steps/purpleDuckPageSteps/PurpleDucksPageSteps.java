@@ -10,7 +10,7 @@ import lombok.Getter;
 public class PurpleDucksPageSteps extends PurpleDuckPage {
 
     @Getter
-    private String randomQuantity = Faker.generateRandomNumber();
+    private String randomQuantity = Faker.generatePhoneNumber();
 
 
     @Когда("пользователь кликнул по розовой уточке и перешёл на её страницу")
@@ -23,7 +23,6 @@ public class PurpleDucksPageSteps extends PurpleDuckPage {
         clickToAddCardButton();
 
     }
-
 
     @И("кликает checkout")
     public void buttonCheckoutClick() {

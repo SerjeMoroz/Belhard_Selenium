@@ -13,10 +13,10 @@ public class Faker {
     public static net.datafaker.Faker faker = new net.datafaker.Faker();
 
     public static String generateFirstName() {
-        return "test_" + faker.name().firstName();
+        return "Test_" + faker.name().firstName();
     }
 
-    public static String generateSurname() {
+    public static String generateLastname() {
         return faker.name().lastName();
     }
 
@@ -46,26 +46,14 @@ public class Faker {
     }
 
 
-    public static String generateRandomAge() {
-        Random random = new Random();
-        int randomNumber = random.nextInt(33) + 18;
-        String randomAgeString = String.valueOf(randomNumber);
-        return randomAgeString;
-    }
-
     public static String generateRandomLink() {
         return faker.internet().url();
     }
 
     public static String generateRandomQuantity() {
-        double randomQuantity = faker.number().numberBetween(15, 100);
-        String salary = String.valueOf(randomQuantity);
-        return salary;
+        double randomQuantity = faker.number().numberBetween(150000, 200000);
+        String Number = String.valueOf(randomQuantity);
+        return Number;
     }
 
-    public static String generateRandomNumber() {
-        int randomCountDay = faker.number().numberBetween(1, 10);
-        String countDay = String.valueOf(randomCountDay);
-        return countDay;
-    }
 }
