@@ -10,7 +10,6 @@ import static java.awt.SystemColor.text;
 public class CheckoutPage extends BasePage {
 
 
-    private static final SelenideElement COMPANY_NAME_AREA = $(By.xpath("//input[@name='company']"));
     private static final SelenideElement FIRST_NAME_AREA = $(By.cssSelector("input[name='firstname']"));
     private static final SelenideElement LAST_NAME_AREA = $(By.cssSelector("input[name='lastname']"));
     private static final SelenideElement ADDRESS_1_AREA = $(By.cssSelector("input[name='address1']"));
