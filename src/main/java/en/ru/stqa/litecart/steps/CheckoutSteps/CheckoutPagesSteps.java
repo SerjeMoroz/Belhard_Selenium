@@ -55,12 +55,6 @@ public class CheckoutPagesSteps extends CheckoutPage {
         clickCountryDropDownMenu();
     }
 
-
-    @И("кликает Confirm order")
-    public void userClickConfirmButtonOrder() {
-        clickConfirmOrderButton();
-    }
-
     @И("заполнет поле Email")
     public void enterEmailField() {
         sendEmailArea(getEmail());
@@ -70,4 +64,15 @@ public class CheckoutPagesSteps extends CheckoutPage {
     public void enterPhoneField() {
         sendPhoneNumberArea(getNumber());
     }
+
+    @И("пишет комментарии")
+    public void sendComments() {
+        sensTextCommentsArea(getText());
+    }
+
+    @И("кликает Confirm order")
+    public void userClickConfirmButtonOrder() {
+        clickConfirmOrderButton();
+    }
+
 }
