@@ -27,7 +27,6 @@ public class Utils {
         Selenide.refresh();
     }
 
-
     public void assertRandomCartItemCount() {
         Faker faker = new Faker();
         Random random = new Random();

@@ -15,7 +15,7 @@ public class BasePageSteps extends BasePage {
     Utils utils = new Utils();
     PropertiesManager propertiesManager = new PropertiesManager();
 
-    @Дано("пользователь авторизован на сайте через куки")
+    @Дано("пользователь авторизовался через куки")
     public void userAutorizatedOnLite() {
         open("", propertiesManager.getDomain(), propertiesManager.getDevLogin(), propertiesManager.getDevPassword());
         utils.authorizationWithCookies();
