@@ -52,7 +52,7 @@ public class CheckoutPagesSteps extends CheckoutPage {
 
     @И("выбирает Страну")
     public void choiceCountry() {
-        clickCountryDropDownMenu();
+        clickBelarusDropdownMenu();
     }
 
     @И("заполнет поле Email")
