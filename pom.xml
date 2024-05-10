@@ -146,8 +146,8 @@
                 <configuration>
                     <!--suppress UnresolvedMavenProperty -->
                     <argLine>
-                        -Dcucumber.filter.tags="@SomeTag1 or @SomeTag2 or @SomeTag3 or @SomeTag4"
-                        -Dcucumber.filter.tags=@changeRegion
+<!--                        -Dcucumber.filter.tags="@SomeTag1 or @SomeTag2 or @SomeTag3 or @SomeTag4"-->
+<!--                        -Dcucumber.filter.tags=@changeRegion-->
                         -Dip=${ip}
                         -Denv=${env}
                         -Dbrowser=${browser}
