@@ -44,7 +44,7 @@ public class CheckoutPage extends BasePage {
         enterValueInField(CITY_AREA, text);
     }
 
-    public void clickCountryDropDownMenu() {
+    public void clickBelarusDropdownMenu() {
         element(COUNTRY).selectOptionByValue("BY");
     }
 
