@@ -2,12 +2,14 @@ package en.ru.stqa.litecart.Pages;
 
 import com.codeborne.selenide.SelenideElement;
 import en.ru.stqa.litecart.Helpers.CustomMethods;
+import io.cucumber.java.en_lol.BUT;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Sleeper;
 
 
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Selenide.*;
 import static org.openqa.selenium.Keys.ENTER;
-import static com.codeborne.selenide.Selectors.byXpath;
 
 public class BasePage extends CustomMethods {
     private static final SelenideElement INPUT_SEARCH_FIELD = $(By.cssSelector("input[placeholder='Search']"));
@@ -21,6 +23,11 @@ public class BasePage extends CustomMethods {
     private static final SelenideElement GREEN_DUCK = $(By.xpath("(//a[@title='Green Duck'])[1]"));
     private static final SelenideElement RED_DUCK = $(By.xpath("(//a[@title='Red Duck'])[1]"));
     private static final SelenideElement BLUE_DUCK = $(By.xpath("(//a[@title='Blue Duck'])[1]"));
+    private static final SelenideElement BUTTON_CHANGE_REGION_AND_COURSES = $(byCssSelector(".fancybox-region"));
+    private static final SelenideElement CURRENCY_DROPDOWN_MENU = $(byCssSelector("select[name='currency_code']"));
+    private static final SelenideElement COUNTRY_DROPDOWN_MENU = $ (byCssSelector("select[name='country_code']"));
+    private static final SelenideElement BUTTON_SAVE = $(byCssSelector("button[value='Save']"));
+
 
 
     public void sendIntoInputField(String text) {
@@ -43,6 +50,21 @@ public class BasePage extends CustomMethods {
         customClick(LOGOUT_BUTTON);
     }
 
+    public void clickChangeButton() {
+        customClick(BUTTON_CHANGE_REGION_AND_COURSES);
+    }
+
+    public void selectCurrencyEuro() {
+        element(CURRENCY_DROPDOWN_MENU).selectOptionByValue("EUR");
+    }
+
+    public void selectCountry() {
+        element(COUNTRY_DROPDOWN_MENU).selectOptionByValue("BY");
+    }
+
+    public void clickSaveChangeForm() {
+        customClick(BUTTON_SAVE);
+    }
 
     public void clickCategoriesRubberDucks() {
         customClick(RUBBER_DUCKS_MENU_BUTTON);
@@ -67,5 +89,7 @@ public class BasePage extends CustomMethods {
     public void userClickBlueDuck() {
         customClick(BLUE_DUCK);
     }
+
+
 
 }
