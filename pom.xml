@@ -14,7 +14,7 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <allure-maven.version>2.10.0</allure-maven.version>
 
-        <selenide.version>7.2.3</selenide.version>
+        <selenide.version>7.3.1</selenide.version>
         <cucumber.version>7.15.0</cucumber.version>
         <allure.version>2.25.0</allure.version>
         <junit.platform.version>1.10.1</junit.platform.version>
@@ -28,7 +28,7 @@
         <env>dev</env>
         <ip>192.168.100.5</ip>
         <browser>chrome</browser>
-        <browser>firefox</browser>
+<!--        <browser>firefox</browser>-->
     </properties>
 
     <dependencies>
@@ -146,8 +146,6 @@
                 <configuration>
                     <!--suppress UnresolvedMavenProperty -->
                     <argLine>
-<!--                        -Dcucumber.filter.tags="@SomeTag1 or @SomeTag2 or @SomeTag3 or @SomeTag4"-->
-<!--                        -Dcucumber.filter.tags=@changeRegion-->
                         -Dip=${ip}
                         -Denv=${env}
                         -Dbrowser=${browser}
