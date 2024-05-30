@@ -14,18 +14,18 @@ public class Utils {
 
     PropertiesManager propertiesManager = new PropertiesManager();
 
-    @Step("Авторизация через куки")
-    public void authorizationWithCookies() {
-
-        String cookie = propertiesManager.getCookiesValue();
-
-        Cookie sessionCookie = new Cookie(
-                propertiesManager.getCookiesName(), cookie, propertiesManager.getDomain(), "/",
-                null, false, false);
-
-        getWebDriver().manage().addCookie(sessionCookie);
-        Selenide.refresh();
-    }
+//    @Step("Авторизация через куки")
+//    public void authorizationWithCookies() {
+//
+//        String cookie = propertiesManager.getCookiesValue();
+//
+//        Cookie sessionCookie = new Cookie(
+//                propertiesManager.getCookiesName(), cookie, propertiesManager.getDomain(), "/",
+//                null, false, false);
+//
+//        getWebDriver().manage().addCookie(sessionCookie);
+//        Selenide.refresh();
+//    }
 
     public void assertRandomCartItemCount() {
         Faker faker = new Faker();
@@ -33,6 +33,15 @@ public class Utils {
         int expectedItemCount = random.nextInt(10) + 1;
 
         $("").shouldHave(exactText(String.valueOf(expectedItemCount)));
+    }
+
+    public String clearStringOfInt(String phoneNumber) {
+        String cleanNumber = phoneNumber.replaceAll("[^0-9]", "");
+        if (cleanNumber.length() == 12) {
+            cleanNumber = cleanNumber.substring(3);
+        }
+        CustomLogger.loggerInfoYellow("Очищенное значение номера телефона: ", cleanNumber);
+        return cleanNumber;
     }
 
 }

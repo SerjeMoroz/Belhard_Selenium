@@ -12,8 +12,6 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class PurpleDuckPage extends BasePage {
 
-    Utils utils = new Utils();
-
     private static final SelenideElement ADD_TO_CARD_BUTTON = $(By.xpath("//button[normalize-space()='Add To Cart']"));
     private static final SelenideElement CHECKOUT_CART_BUTTON = $(By.xpath("(//a[normalize-space()='Checkout »'])[1]"));
 

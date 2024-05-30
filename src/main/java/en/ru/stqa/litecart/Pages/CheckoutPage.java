@@ -37,14 +37,14 @@ public class CheckoutPage extends BasePage {
     }
 
     public void sendPostcodeArea(String randomNumber) {
-        enterValueInField(POSTCODE_AREA, randomNumber);
+        valueEnterNumberFieldChecked(POSTCODE_AREA, randomNumber);
     }
 
     public void sendCityArea(String text) {
         enterValueInField(CITY_AREA, text);
     }
 
-    public void clickCountryDropDownMenu() {
+    public void clickBelarusDropdownMenu() {
         element(COUNTRY).selectOptionByValue("BY");
     }
 

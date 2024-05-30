@@ -93,12 +93,12 @@ public class CustomMethods {
         assert element.is(disabled, Duration.ofSeconds(10)) : "Неправильный статус поле, поле " + nameOfElement + " - активно";
     }
 
-//    public void valueEnterNumberFieldChecked(SelenideElement field, String value) {
-//        field.shouldBe(enabled, Duration.ofSeconds(10));
-//        field.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE);
-//        field.setValue(value);
-//        String actualValue = utils.clearStringOfInt(field.getValue());
-//        assert actualValue.equals(value) : "Поле ввода не содержит текст: \n Актуальное значение: " + actualValue + "\n Ожидаемое значение: " + value;
-//    }
+    public void valueEnterNumberFieldChecked(SelenideElement field, String value) {
+        field.shouldBe(enabled, Duration.ofSeconds(10));
+        field.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE);
+        field.setValue(value);
+        String actualValue = utils.clearStringOfInt(field.getValue());
+        assert actualValue.equals(value) : "Поле ввода не содержит текст: \n Актуальное значение: " + actualValue + "\n Ожидаемое значение: " + value;
+    }
 
 }

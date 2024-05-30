@@ -8,7 +8,7 @@ import static en.ru.stqa.litecart.Helpers.CustomLogger.loggerInfoYellow;
 
 public class PropertiesManager {
 
-    private Properties properties;
+    private static Properties properties;
 
     String env = System.getProperty("env");
 
@@ -55,28 +55,34 @@ public class PropertiesManager {
         return properties.getProperty("cookiesValue");
     }
 
-    public String getDomain() {
+    public static String getUrl() {
+        return properties.getProperty("BaseUrl");
+    }
+
+    public static String getDomain() {
         return properties.getProperty("domain");
     }
 
-    public String getHeadless() {
+    public static String getHeadless() {
         return properties.getProperty("headless");
     }
 
-    public String getRemote() {
+    public static String getRemote() {
         return properties.getProperty("remote");
     }
 
-    public String getBrowser() {
+    public static String getBrowser() {
         return properties.getProperty("browser");
     }
 
-    public String getDevLogin() {
-        return properties.getProperty("devLogin");
+    public static String login() {
+        System.out.println(properties.getProperty("UserLogin"));
+        return properties.getProperty("UserLogin");
     }
 
-    public String getDevPassword() {
-        return properties.getProperty("devPassword");
+    public static String password() {
+        System.out.println(properties.getProperty("UserPassword"));
+        return properties.getProperty("UserPassword");
     }
 
 }

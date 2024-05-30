@@ -28,6 +28,7 @@
         <env>dev</env>
         <ip>192.168.100.5</ip>
         <browser>chrome</browser>
+<!--        <browser>firefox</browser>-->
     </properties>
 
     <dependencies>
@@ -192,6 +193,7 @@
                         <version>${maven-surefire-plugin.version}</version>
                         <configuration>
                             <argLine>
+                                -Dcucumber.filter.tags=@BuyDuckTest
                                 -Dip=${ip}
                                 -Denv=${env}
                                 -Dbrowser=firefox
