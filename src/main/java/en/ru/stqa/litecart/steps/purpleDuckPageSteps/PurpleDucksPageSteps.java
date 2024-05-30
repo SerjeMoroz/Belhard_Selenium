@@ -30,9 +30,9 @@ public class PurpleDucksPageSteps extends PurpleDuckPage {
         clickCheckoutButton();
     }
 
-    @Дано("пользователь авторизовался")
-    public void пользовательАвторизовался() {
-
-    }
+//    @Дано("пользователь авторизовался")
+//    public void пользовательАвторизовался() {
+//
+//    }
 }
 
