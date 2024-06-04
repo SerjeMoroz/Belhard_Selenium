@@ -1,7 +1,9 @@
 package en.ru.stqa.litecart.Helpers;
 
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.*;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.BeforeAll;
+import org.junit.Test;
 import org.openqa.selenium.Keys;
 
 import java.io.File;
@@ -9,6 +11,8 @@ import java.time.Duration;
 import java.util.Random;
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
+import static com.codeborne.selenide.Selenide.clearBrowserLocalStorage;
 
 public class CustomMethods {
 
@@ -99,6 +103,20 @@ public class CustomMethods {
         field.setValue(value);
         String actualValue = utils.clearStringOfInt(field.getValue());
         assert actualValue.equals(value) : "Поле ввода не содержит текст: \n Актуальное значение: " + actualValue + "\n Ожидаемое значение: " + value;
+    }
+
+
+    @BeforeAll
+    public static void beforeAll() {
+        Configuration.browserSize = "1920x1080";
+        Configuration.baseUrl = "https://litecart.stqa.ru/en/";
+    }
+
+    @AfterAll
+    public static void afterAll() {
+        clearBrowserLocalStorage();
+        clearBrowserCookies();
+        WebDriverRunner.getWebDriver().quit();
     }
 
 }
